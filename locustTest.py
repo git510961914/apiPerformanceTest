@@ -52,13 +52,12 @@ class Websiteuser(HttpLocust):
 #locust -f XX.py --master --host=http://www.to8to.com --master-bind-port=5557(同时监听5558) --master-bind-host=192.168.103.4(指定主机服务绑定的网卡)  --logfile = locustfile.log，host参数可在脚本设置
 
 #从处理器，负责执行代码脚本的(在从机下执行)
-#locust -f XX.py --slave --master-host=192.168.0.100 --master-port=4445(指定主机的端口) --host=http://www.to8to.com
+#locust -f XX.py --slave --master-host=192.168.0.100 --master-port=5557(指定主机的端口) --host=http://www.to8to.com
 
 #执行完后，在主机上访问web页面进入监控台查看：http://localhost:8089
 
 #Locust其实也可以在一个机器的多个进程中运行，一个进程作为主进程，其余进程作为备进程
 #开一个终端执行locust --master，重新打开一个终端窗口运行locust --slave
-
 
 if __name__=="__main__":
     #开启master模式
