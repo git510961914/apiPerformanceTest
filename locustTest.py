@@ -1,5 +1,6 @@
 #!coding=utf-8
 import json
+import os
 from locust import HttpLocust,TaskSet,task
 
 #定义用户行为类
@@ -26,8 +27,8 @@ class Userbehavior(TaskSet):
     @task(1) #@task操作符声明该方法是一个事务.可选的权重参数，用于说明任务执行的比率
     def test_findRecommendLine(self): #一个用户行为
         #查询推荐线路
-        data = '{"eLatitude":"29.557204","eLongitude":"106.577034","endArea":"重庆市-重庆市-渝中区","sLatitude":"29.62190200000001",\
-                "sLongitude":"106.4912350000001","startArea":"重庆市-重庆市-渝北区","version":"2.0"}'
+        data = {"eLatitude":"29.557204","eLongitude":"106.577034","endArea":"重庆市-重庆市-渝中区","sLatitude":"29.62190200000001",\
+                "sLongitude":"106.4912350000001","startArea":"重庆市-重庆市-渝北区","version":"2.0"}
         response_data = self.client.get('/api/trip/findRecommendLine',data=data,headers=self.header)
         print(response_data.status_code)
         print(response_data)
@@ -40,4 +41,20 @@ class Websiteuser(HttpLocust):
     #wait_time = between(1,1.500)
     #weight = 3 该属性属性表示数量权重
     host = 'http://shuitupaycallbackpre.callme.work' #命令行中是需要通过--host来指定的,如果host属性在文件中被声明，则在命令行中则不需要再次声明
+    #stop_timeout = 60 #(ms,web模式下的压测运行时间)
 
+
+#分布式部署(主机master和从机slave分别装好locust环境，且都要有执行的Python文件)
+
+#主处理器，负责分发任务的，监听以及收集统计数据，从而提供给web端，不参与创建并发用户(在主机下执行)
+#locust -f XX.py --master --host=http://www.to8to.com，host参数可在脚本设置
+
+#从处理器，负责执行代码脚本的(在从机下执行)
+#locust -f XX.py --slave --master-host=192.168.0.100 --host=http://www.to8to.com
+
+#执行完后，在主机上访问web页面进入监控台查看：http://localhost:8089
+
+
+if __name__=="__main__":
+    #开启master模式
+    os.system('locust -f locustTest.py --master') #os.system('locust -f locustTest.py --slave --master-host=192.168.103.4')
