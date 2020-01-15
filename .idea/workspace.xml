@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24951c7f-20ac-4dc5-a773-da8ffe8327cb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/apiPerformanceTest.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/locustTest.py" afterPath="$PROJECT_DIR$/locustTest.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +17,8 @@
       <file leaf-file-name="locustTest.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/locustTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1770">
-              <caret line="59" column="119" lean-forward="false" selection-start-line="59" selection-start-column="119" selection-end-line="59" selection-end-column="119" />
+            <state relative-caret-position="491">
+              <caret line="59" column="50" lean-forward="true" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
               <folding>
                 <element signature="e#15#26#0" expanded="true" />
               </folding>
@@ -300,8 +295,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/locustTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1770">
-          <caret line="59" column="119" lean-forward="false" selection-start-line="59" selection-start-column="119" selection-end-line="59" selection-end-column="119" />
+        <state relative-caret-position="491">
+          <caret line="59" column="50" lean-forward="true" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
           <folding>
             <element signature="e#15#26#0" expanded="true" />
           </folding>
